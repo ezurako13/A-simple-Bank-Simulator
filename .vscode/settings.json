@@ -1,0 +1,16 @@
+{
+	"files.associations": {
+		"*.h": "c",
+		"*.c": "c",
+		"*.l": "lex",
+		"*.lisp": "commonlisp",
+		"*.gpp": "lisp",
+		"*.g++": "commonlisp",
+		"*.y": "yacc",
+		"*.cfg": "xml",
+		"*.s": "gas",
+		"*.spice": "spice",
+		"*.yaml": "yaml",
+		"system_error": "c"
+	}
+}
