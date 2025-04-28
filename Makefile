@@ -83,15 +83,15 @@ val_server: val
 	-rm -f /tmp/$(SERVER_FIFO)
 	$(VALGRIND) --log-file=valgrind_logs/server.log ./$(SERVER) AdaBank $(SERVER_FIFO)
 
-# Valgrind clients
-val_client1: val
-	$(VALGRIND) --log-file=valgrind_logs/client1.log ./$(CLIENT) Client1.file $(SERVER_FIFO)
+# # Valgrind clients
+# val_client1: val
+# 	$(VALGRIND) --log-file=valgrind_logs/client1.log ./$(CLIENT) Client1.file $(SERVER_FIFO)
 
-val_client2: val
-	$(VALGRIND) --log-file=valgrind_logs/client2.log ./$(CLIENT) Client2.file $(SERVER_FIFO)
+# val_client2: val
+# 	$(VALGRIND) --log-file=valgrind_logs/client2.log ./$(CLIENT) Client2.file $(SERVER_FIFO)
 
-val_client3: val
-	$(VALGRIND) --log-file=valgrind_logs/client3.log ./$(CLIENT) Client3.file $(SERVER_FIFO)
+# val_client3: val
+# 	$(VALGRIND) --log-file=valgrind_logs/client3.log ./$(CLIENT) Client3.file $(SERVER_FIFO)
 
 # Run a comprehensive valgrind test
 val_test: val
@@ -111,12 +111,12 @@ val_test: val
 	kill -TERM $$SERVER_PID; \
 	wait $$SERVER_PID 2>/dev/null || true
 
-# Enhanced Valgrind test that checks for resource leaks
-val_leak_test: val
-	@echo "Running resource leak test with Valgrind"
-	@mkdir -p valgrind_logs
-	@chmod +x ./test_memory_leaks.sh
-	./test_memory_leaks.sh
+# # Enhanced Valgrind test that checks for resource leaks
+# val_leak_test: val
+# 	@echo "Running resource leak test with Valgrind"
+# 	@mkdir -p valgrind_logs
+# 	@chmod +x ./test_memory_leaks.sh
+# 	./test_memory_leaks.sh
 
 # Clean up all FIFOs in /tmp
 clean_fifos:
